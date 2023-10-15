@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#030450"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilePageActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/backprofilebtn"
+        android:background="@drawable/back_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"/>
+
+    <ImageView
+        android:id="@+id/profileImg"
+        android:background="@drawable/profile_logo"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:id="@+id/profileText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Your Profile Page"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginTop="150dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
+</ScrollView>
