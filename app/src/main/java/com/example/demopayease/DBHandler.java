@@ -35,13 +35,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + EMAIL + " TEXT,"
                 + PHONE + " TEXT,"
                 + PASSWORD + " TEXT,"
-                + C_PASSWORD + " TEXT,"
-                + BANK_ACC_NO + "TEXT,"
-                + BANK_ACC_NAME + "TEXT,"
-                + BANK_NAME + "TEXT,"
-                + UPI_PIN + "TEXT,"
-                + IFSC_CODE + "TEXT,"
-                + BALANCE + "TEXT)";
+                + C_PASSWORD + " TEXT)";
         db.execSQL(query);
     }
     public void addNewUser(String username1, String email1, String phone1, String password1, String c_password1) {
@@ -57,6 +51,22 @@ public class DBHandler extends SQLiteOpenHelper {
 
         db.insert(TABLE_NAME, null, values);
         db.close();
+    }
+
+    boolean loggedIn;
+    public boolean login(String userL, String passL)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM payEaseSignUp WHERE userName='"+userL+"' AND password='"+passL+"'", null);
+        if(cursor.moveToFirst())
+        {
+            loggedIn = true;
+        }
+        else
+        {
+            loggedIn = false;
+        }
+        return loggedIn;
     }
 
     /**public void DeleteUser(String username)

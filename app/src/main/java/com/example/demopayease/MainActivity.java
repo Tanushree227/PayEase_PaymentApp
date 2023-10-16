@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         login.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            finish();
             startActivity(intent);
         });
     }

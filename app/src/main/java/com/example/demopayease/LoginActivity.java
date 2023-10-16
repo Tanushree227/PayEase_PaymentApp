@@ -41,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
         uname.setText(user_str);
         pass.setText(pass_str);
 
+        DBHandler dbHandler = new DBHandler(this);
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,9 +54,16 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                    finish();
-                    startActivity(i);
+                    boolean loggedIn = dbHandler.login(unameText, passText);
+                    //if(loggedIn) {
+                        Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                        finish();
+                        startActivity(i);
+                    //}
+                    /**else
+                    {
+                        Toast.makeText(LoginActivity.this, "User do not Exist, Create a Account First.", Toast.LENGTH_SHORT).show();
+                    }**/
                 }
             }
         });
@@ -64,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                onBackPressed();
             }
         });
     }
