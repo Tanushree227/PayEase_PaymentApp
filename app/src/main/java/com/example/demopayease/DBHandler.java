@@ -57,16 +57,13 @@ public class DBHandler extends SQLiteOpenHelper {
     public boolean login(String userL, String passL)
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM payEaseSignUp WHERE userName='"+userL+"' AND password='"+passL+"'", null);
-        if(cursor.moveToFirst())
-        {
-            loggedIn = true;
-        }
-        else
-        {
-            loggedIn = false;
-        }
-        return loggedIn;
+        String[] columns = {"id"};
+        String selection = "userL=? AND passL=?";
+        String[] selectionArgs = {userL, passL};
+        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count > 0;
     }
 
     /**public void DeleteUser(String username)

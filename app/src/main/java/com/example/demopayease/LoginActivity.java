@@ -18,7 +18,6 @@ import com.google.android.material.button.MaterialButton;
 public class LoginActivity extends AppCompatActivity {
     public static final String SHARED_PREFS = "login_prefs";
     public static final String USERNAME_KEY = "username_key";
-
     public static final String PASSWORD_KEY = "password_key";
 
     SharedPreferences sharedPreferences;
