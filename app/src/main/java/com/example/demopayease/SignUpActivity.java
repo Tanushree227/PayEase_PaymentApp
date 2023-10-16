@@ -147,6 +147,6 @@ public class SignUpActivity extends AppCompatActivity {
         editor.putString(USERNAME_KEY, user);
         editor.putString(PASSWORD_KEY, pass);
         editor.apply();
-        Toast.makeText(this, "Username and Password saved to shared Preferences.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Username and Password saved for future references.", Toast.LENGTH_SHORT).show();
     }
 }

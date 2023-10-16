@@ -36,6 +36,73 @@
         android:layout_marginTop="150dp"
         android:textAlignment="center"
         android:textColor="@color/white"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/profileText"
+        android:layout_margin="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailText"
+            android:text="Profile Information:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="15dp" />
+
+        <TextView
+            android:id="@+id/userText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailText"
+            android:text="UserName: "
+            android:textSize="18dp"
+            android:layout_marginStart="15dp" />
+
+        <TextView
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userText"
+            android:text="Email: "
+            android:textSize="18dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/phoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailText"
+            android:text="Phone: "
+            android:textSize="18dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bankText"
+            android:text="Add Bank Details"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_margin="15dp"
+            android:layout_below="@id/phoneText"/>
+
+        <Button
+            android:id="@+id/addBankbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bankText"
+            android:layout_centerInParent="true"
+            android:text="Add Bank Account"
+            android:backgroundTint="#030450"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
 </ScrollView>
