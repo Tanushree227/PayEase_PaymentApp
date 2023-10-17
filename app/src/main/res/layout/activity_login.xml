@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:layout_below="@+id/signinText"
-        android:hint="Enter Username / Phone Number"
+        android:hint="Enter Name"
         android:inputType="text"
         android:background="#30ffffff"
         android:textColorHint="@color/white"

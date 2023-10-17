@@ -10,10 +10,14 @@ import android.widget.ImageView;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private DBHandler dbHandler; // Declare a reference to the DBHandler
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        dbHandler = new DBHandler(this); // Create an instance of DBHandler to open the database
 
         ImageView to_phone = (ImageView) findViewById(R.id.tophone);
         ImageView to_contact = (ImageView) findViewById(R.id.tocontact);
@@ -23,14 +27,15 @@ public class HomeActivity extends AppCompatActivity {
         ImageView balance_history = (ImageView) findViewById(R.id.balance);
 
         menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ProfilePageActivity.class);
-                startActivity(intent);
-            }
-        });
+                                    @Override
+                                    public void onClick(View view) {
+                                        Intent intent = new Intent(HomeActivity.this, ProfilePageActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
 
-        to_phone.setOnClickListener(new View.OnClickListener() {
+
+                to_phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i1 = new Intent(HomeActivity.this, ToPhoneActivity.class);

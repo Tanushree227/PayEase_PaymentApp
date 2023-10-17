@@ -39,7 +39,7 @@
         android:background="#30ffffff" />
 
     <EditText
-        android:id="@+id/phone"
+        android:id="@+id/BankaccNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/bankName"
@@ -55,7 +55,7 @@
         android:id="@+id/ifscC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/phone"
+        android:layout_below="@id/BankaccNum"
         android:hint="Enter IFSC Code"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -102,15 +102,19 @@
         android:padding="20dp"
         android:background="#30ffffff"
         android:inputType="numberDecimal" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Bank"
         android:layout_below="@id/balanceAmt"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#f1faee"
+        android:text="Add Bank"
         android:textColor="#030450"
-        android:layout_margin="20dp"
-        android:textSize="25sp"/>
+        android:textSize="25sp" />
 </RelativeLayout>

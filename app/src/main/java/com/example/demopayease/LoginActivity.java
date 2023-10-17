@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,10 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
         MaterialButton loginBtn = findViewById(R.id.loginbtn);
 
-        String user_str = sharedPreferences.getString(USERNAME_KEY, "");
-        String pass_str = sharedPreferences.getString(PASSWORD_KEY, "");
-        uname.setText(user_str);
-        pass.setText(pass_str);
+
 
         DBHandler dbHandler = new DBHandler(this);
 
@@ -53,7 +51,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    boolean loggedIn = dbHandler.login(unameText, passText);
+                    sharedPreferences.edit().putString(USERNAME_KEY, unameText).apply();
+                    sharedPreferences.edit().putString(PASSWORD_KEY, passText).apply();
+                    Log.d("Username", "Username"+unameText+"Password"+passText);
+
                     //if(loggedIn) {
                         Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                         finish();

@@ -22,6 +22,9 @@ public class SignUpActivity extends AppCompatActivity {
     public static final String SHARED_PREFS = "login_prefs";
     public static final String USERNAME_KEY = "username_key";
 
+    public static final String EMAIL_KEY = "email_key";
+    public static final String PHONE_KEY = "phone_key";
+
     public static final String PASSWORD_KEY = "password_key";
 
     SharedPreferences sharedPreferences;
@@ -96,8 +99,11 @@ public class SignUpActivity extends AppCompatActivity {
                 else
                 {
                     dbHandler.addNewUser(u1, e1, p1, pass1, cp1);
+                    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+                    sharedPreferences.edit().putString(EMAIL_KEY, e1).apply();
+                    sharedPreferences.edit().putString(PHONE_KEY, p1).apply();
 
-                    saveMessage(u1, p1);
+                    saveMessage(u1, pass1);
 
                     Toast.makeText(SignUpActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                     username.setText("");
